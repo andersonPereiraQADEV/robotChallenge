@@ -32,6 +32,7 @@ Open Download Page
     Wait Until Element Is Visible    ${LOC_DOWNLOAD.pageTitle}    timeout=${DEFAULT_TIMEOUT}
 
 Download File "${downloadFile}"
+    Remove Directory    ${DOWNLOAD_DIR}    recursive=True
     Set Test Variable    ${downloadFile}
     Click Element    ${{$LOC_DOWNLOAD.file_link.format($downloadFile)}}
 
