@@ -26,27 +26,27 @@ Open Download Page
 
     ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_experimental_option    prefs    ${prefs}
-
     Create WebDriver    Chrome    options=${chrome_options}
     Go To    ${DOWNLOAD_URL}
     Wait Until Element Is Visible    ${LOC_DOWNLOAD.pageTitle}    timeout=${DEFAULT_TIMEOUT}
 
 Download File "${downloadFile}"
-    Remove Directory    ${DOWNLOAD_DIR}    recursive=True
     Set Test Variable    ${downloadFile}
+    ${file_path}    Set Variable    ${DOWNLOAD_DIR}/${downloadFile}
+    ${exists}    Run Keyword And Return Status    File Should Exist    ${file_path}
+    IF    ${exists}
+        Remove File    ${file_path}
+    END
     Click Element    ${{$LOC_DOWNLOAD.file_link.format($downloadFile)}}
 
 Validate Downloaded File
     ${file_path}    Set Variable    ${DOWNLOAD_DIR}/${downloadFile}
-
     FOR    ${i}    IN RANGE    10
         ${exists}    Run Keyword And Return Status    File Should Exist    ${file_path}
         IF  ${exists}  BREAK
         Sleep    1s
     END
-
     ${fileSize}    Get File Size    ${file_path}
-
     IF    ${fileSize} > 0
         Log    \nFile downloaded successfully: ${file_path}.     console=True
     ELSE
