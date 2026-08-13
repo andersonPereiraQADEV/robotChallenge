@@ -1,8 +1,11 @@
 *** Variables ***
 &{LOC_UPLOAD}
-...    input=//input[@id='file-upload']
-...    submit=//input[@id='file-submit']
-...    success_msg=//h3[text()='File Uploaded!']
+...    pageTitle=//h3[text()='File Uploader']
+...    uploadButton=//input[@id='file-upload']
+...    submitButton=//input[@id='file-submit']
+...    uploadedSucess=//h3[text()='File Uploaded!']
+...    fileName=//div[@id='uploaded-files' and normalize-space(text()='()')]
 
 &{LOC_DOWNLOAD}
-...    file_link=(//div[@class='example']/a)[1]
+...    pageTitle=//h3[text()='File Downloader']
+...    file_link=//a[text()='{}']
