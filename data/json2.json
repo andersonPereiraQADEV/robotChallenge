@@ -1,0 +1,10 @@
+{
+  "id": 101,
+  "name": "QA Challenge",
+  "active": true,
+  "skills": [
+    "Robot Framework",
+    "Selenium",
+    "Python"
+  ]
+}

@@ -1,0 +1,11 @@
+[project]
+name = "robotchallenge"
+version = "0.1.0"
+description = "QA Automation Challenge using Robot Framework and Selenium"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "robotframework>=7.0",
+    "robotframework-jsonlibrary<=0.5",
+    "robotframework-seleniumlibrary>=6.2.0",
+]

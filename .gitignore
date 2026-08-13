@@ -1,0 +1,32 @@
+# Python / Environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+
+# Tooling
+.uv/
+uv.lock
+
+# Test Results & Logs
+results/
+output/
+log.html
+report.html
+output.xml
+log/
+
+# Downloads folder used during tests
+downloads/
+
+# IDE / Editor Settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS Specific
+.DS_Store
+Thumbs.db
