@@ -46,6 +46,7 @@ Validate Downloaded File
         IF  ${exists}  BREAK
         Sleep    1s
     END
+    Should Be True    ${exists}    msg=Downloaded file was not found: ${file_path}
     ${fileSize}    Get File Size    ${file_path}
     IF    ${fileSize} > 0
         Log    \nFile downloaded successfully: ${file_path}.     console=True

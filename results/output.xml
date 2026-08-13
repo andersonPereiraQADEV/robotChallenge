@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.13.11 on win32)" generated="2026-08-12T23:59:18.716745" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.13.11 on win32)" generated="2026-08-13T00:02:08.762472" rpa="false" schemaversion="5">
 <suite id="s1" name="robotChallenge" source="C:\Users\G4M3R\PROJETOS\robotChallenge">
 <suite id="s1-s1" name="Tests" source="C:\Users\G4M3R\PROJETOS\robotChallenge\tests">
 <suite id="s1-s1-s1" name="Challenge Tests" source="C:\Users\G4M3R\PROJETOS\robotChallenge\tests\challenge_tests.robot">
 <test id="s1-s1-s1-t1" name="Test 1: Validate File Upload" line="7">
 <kw name="Open Upload Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:19.379226" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/upload'.</msg>
+<msg time="2026-08-13T00:02:09.422165" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/upload'.</msg>
 <arg>${UPLOAD_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-08-12T23:59:19.378756" elapsed="2.628656"/>
+<status status="PASS" start="2026-08-13T00:02:09.421798" elapsed="2.840385"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOC_UPLOAD.pageTitle}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.007715" elapsed="0.023995"/>
+<status status="PASS" start="2026-08-13T00:02:12.262422" elapsed="0.019513"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:19.377837" elapsed="2.654091"/>
+<status status="PASS" start="2026-08-13T00:02:09.420876" elapsed="2.861236"/>
 </kw>
 <kw name="Perform File Upload" owner="keywords">
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-08-12T23:59:22.033756" level="INFO">${uploadFile} = testfile.csv</msg>
+<msg time="2026-08-13T00:02:12.283282" level="INFO">${uploadFile} = testfile.csv</msg>
 <arg>${uploadFile}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.033084" elapsed="0.001359"/>
+<status status="PASS" start="2026-08-13T00:02:12.282838" elapsed="0.000840"/>
 </kw>
 <kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:22.035664" level="INFO">Sending C:\Users\G4M3R\PROJETOS\robotChallenge\data\testfile.csv to browser.</msg>
+<msg time="2026-08-13T00:02:12.284624" level="INFO">Sending C:\Users\G4M3R\PROJETOS\robotChallenge\data\testfile.csv to browser.</msg>
 <arg>${LOC_UPLOAD.uploadButton}</arg>
 <arg>${DATA_DIR}/${uploadFile}</arg>
 <doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.034768" elapsed="0.024616"/>
+<status status="PASS" start="2026-08-13T00:02:12.283848" elapsed="0.024629"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:22.060316" level="INFO">Clicking button '//input[@id='file-submit']'.</msg>
+<msg time="2026-08-13T00:02:12.309963" level="INFO">Clicking button '//input[@id='file-submit']'.</msg>
 <arg>${LOC_UPLOAD.submitButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.059588" elapsed="0.227808"/>
+<status status="PASS" start="2026-08-13T00:02:12.308820" elapsed="0.233342"/>
 </kw>
 <arg>testfile.csv</arg>
-<status status="PASS" start="2026-08-12T23:59:22.032364" elapsed="0.255242"/>
+<status status="PASS" start="2026-08-13T00:02:12.282400" elapsed="0.259920"/>
 </kw>
 <kw name="Validate Upload Success" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOC_UPLOAD.uploadedSucess}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.288501" elapsed="0.015777"/>
+<status status="PASS" start="2026-08-13T00:02:12.543594" elapsed="0.016359"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:22.321511" level="INFO">${uploaded_file} = testfile.csv</msg>
+<msg time="2026-08-13T00:02:12.576166" level="INFO">${uploaded_file} = testfile.csv</msg>
 <var>${uploaded_file}</var>
 <arg>${{$LOC_UPLOAD.fileName.format($uploadFile)}}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.304486" elapsed="0.017486"/>
+<status status="PASS" start="2026-08-13T00:02:12.560163" elapsed="0.016381"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${uploaded_file}</arg>
 <arg>${uploadFile}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.322298" elapsed="0.000643"/>
+<status status="PASS" start="2026-08-13T00:02:12.576734" elapsed="0.000530"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:22.287967" elapsed="0.035103"/>
+<status status="PASS" start="2026-08-13T00:02:12.542688" elapsed="0.034686"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-08-12T23:59:22.323407" elapsed="4.709004"/>
+<status status="PASS" start="2026-08-13T00:02:12.577922" elapsed="4.748951"/>
 </kw>
 <doc>Automates file upload and validates success message.</doc>
 <tag>upload</tag>
-<status status="PASS" start="2026-08-12T23:59:19.366304" elapsed="7.666384"/>
+<status status="PASS" start="2026-08-13T00:02:09.416057" elapsed="7.911058"/>
 </test>
 <test id="s1-s1-s1-t2" name="Test 2: Validate File Download" line="14">
 <kw name="Open Download Page" owner="keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-08-12T23:59:27.043038" level="INFO">${prefs} = {'download.default_directory': 'C:\\Users\\G4M3R\\PROJETOS\\robotChallenge\\data\\downloads', 'download.prompt_for_download': False, 'download.directory_upgrade': True, 'safebrowsing.enabled': True}</msg>
+<msg time="2026-08-13T00:02:17.337322" level="INFO">${prefs} = {'download.default_directory': 'C:\\Users\\G4M3R\\PROJETOS\\robotChallenge\\data\\downloads', 'download.prompt_for_download': False, 'download.directory_upgrade': True, 'safebrowsing.enabled': True}</msg>
 <var>${prefs}</var>
 <arg>download.default_directory=${DOWNLOAD_DIR}</arg>
 <arg>download.prompt_for_download=${FALSE}</arg>
 <arg>download.directory_upgrade=${TRUE}</arg>
 <arg>safebrowsing.enabled=${TRUE}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-08-12T23:59:27.042494" elapsed="0.000743"/>
+<status status="PASS" start="2026-08-13T00:02:17.336741" elapsed="0.000933"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-08-12T23:59:27.044591" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001B25D668550&gt;</msg>
+<msg time="2026-08-13T00:02:17.339367" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000012AA6E68550&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-08-12T23:59:27.043406" elapsed="0.001504"/>
+<status status="PASS" start="2026-08-13T00:02:17.337876" elapsed="0.001838"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
@@ -99,235 +99,241 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-08-12T23:59:27.045097" elapsed="0.000594"/>
+<status status="PASS" start="2026-08-13T00:02:17.339952" elapsed="0.000509"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:27.046236" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-08-13T00:02:17.340935" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2026-08-12T23:59:27.045872" elapsed="1.202815"/>
+<status status="PASS" start="2026-08-13T00:02:17.340647" elapsed="1.204105"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:28.249205" level="INFO">Opening url 'https://the-internet.herokuapp.com/download'</msg>
+<msg time="2026-08-13T00:02:18.545541" level="INFO">Opening url 'https://the-internet.herokuapp.com/download'</msg>
 <arg>${DOWNLOAD_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-08-12T23:59:28.248885" elapsed="1.943084"/>
+<status status="PASS" start="2026-08-13T00:02:18.545005" elapsed="2.161172"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOC_DOWNLOAD.pageTitle}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.192188" elapsed="0.021826"/>
+<status status="PASS" start="2026-08-13T00:02:20.706524" elapsed="0.018949"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:27.042060" elapsed="3.172124"/>
+<status status="PASS" start="2026-08-13T00:02:17.336221" elapsed="3.389428"/>
 </kw>
 <kw name="Download File &quot;playwright-hard-test.txt&quot;" owner="keywords" source_name="Download File &quot;${downloadFile}&quot;">
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-08-12T23:59:30.215417" level="INFO">${downloadFile} = playwright-hard-test.txt</msg>
+<msg time="2026-08-13T00:02:20.727027" level="INFO">${downloadFile} = playwright-hard-test.txt</msg>
 <arg>${downloadFile}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.215009" elapsed="0.000766"/>
+<status status="PASS" start="2026-08-13T00:02:20.726597" elapsed="0.000837"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-12T23:59:30.216430" level="INFO">${file_path} = C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads/playwright-hard-test.txt</msg>
+<msg time="2026-08-13T00:02:20.728023" level="INFO">${file_path} = C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads/playwright-hard-test.txt</msg>
 <var>${file_path}</var>
 <arg>${DOWNLOAD_DIR}/${downloadFile}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.215932" elapsed="0.000756"/>
+<status status="PASS" start="2026-08-13T00:02:20.727585" elapsed="0.000662"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2026-08-12T23:59:30.217852" level="INFO" html="true">File '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' exists.</msg>
+<msg time="2026-08-13T00:02:20.729223" level="INFO" html="true">File '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' exists.</msg>
 <arg>${file_path}</arg>
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.217387" elapsed="0.000726"/>
+<status status="PASS" start="2026-08-13T00:02:20.728801" elapsed="0.000654"/>
 </kw>
-<msg time="2026-08-12T23:59:30.218415" level="INFO">${exists} = True</msg>
+<msg time="2026-08-13T00:02:20.729713" level="INFO">${exists} = True</msg>
 <var>${exists}</var>
 <arg>File Should Exist</arg>
 <arg>${file_path}</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.216871" elapsed="0.001782"/>
+<status status="PASS" start="2026-08-13T00:02:20.728405" elapsed="0.001491"/>
 </kw>
 <if>
 <branch type="IF" condition="${exists}">
 <kw name="Remove File" owner="OperatingSystem">
-<msg time="2026-08-12T23:59:30.220032" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;'.</msg>
+<msg time="2026-08-13T00:02:20.731845" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;'.</msg>
 <arg>${file_path}</arg>
 <doc>Removes a file with the given path.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.219205" elapsed="0.001199"/>
+<status status="PASS" start="2026-08-13T00:02:20.730505" elapsed="0.002004"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:30.218836" elapsed="0.001670"/>
+<status status="PASS" start="2026-08-13T00:02:20.730043" elapsed="0.002606"/>
 </branch>
-<status status="PASS" start="2026-08-12T23:59:30.218802" elapsed="0.001780"/>
+<status status="PASS" start="2026-08-13T00:02:20.730013" elapsed="0.002714"/>
 </if>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-12T23:59:30.221625" level="INFO">Clicking element '//a[text()='playwright-hard-test.txt']'.</msg>
+<msg time="2026-08-13T00:02:20.733759" level="INFO">Clicking element '//a[text()='playwright-hard-test.txt']'.</msg>
 <arg>${{$LOC_DOWNLOAD.file_link.format($downloadFile)}}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.220701" elapsed="0.204033"/>
+<status status="PASS" start="2026-08-13T00:02:20.732872" elapsed="0.222543"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:30.214553" elapsed="0.210352"/>
+<status status="PASS" start="2026-08-13T00:02:20.726069" elapsed="0.229512"/>
 </kw>
 <kw name="Validate Downloaded File" owner="keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-12T23:59:30.426893" level="INFO">${file_path} = C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads/playwright-hard-test.txt</msg>
+<msg time="2026-08-13T00:02:20.957785" level="INFO">${file_path} = C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads/playwright-hard-test.txt</msg>
 <var>${file_path}</var>
 <arg>${DOWNLOAD_DIR}/${downloadFile}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.426235" elapsed="0.001173"/>
+<status status="PASS" start="2026-08-13T00:02:20.956994" elapsed="0.001165"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2026-08-12T23:59:30.429892" level="FAIL">File 'C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt' does not exist.</msg>
+<msg time="2026-08-13T00:02:20.964545" level="FAIL">File 'C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt' does not exist.</msg>
 <arg>${file_path}</arg>
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="FAIL" start="2026-08-12T23:59:30.429410" elapsed="0.009212">File 'C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt' does not exist.</status>
+<status status="FAIL" start="2026-08-13T00:02:20.962258" elapsed="0.009792">File 'C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt' does not exist.</status>
 </kw>
-<msg time="2026-08-12T23:59:30.438988" level="INFO">${exists} = False</msg>
+<msg time="2026-08-13T00:02:20.972381" level="INFO">${exists} = False</msg>
 <var>${exists}</var>
 <arg>File Should Exist</arg>
 <arg>${file_path}</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.428869" elapsed="0.010475"/>
+<status status="PASS" start="2026-08-13T00:02:20.959822" elapsed="0.012867"/>
 </kw>
 <if>
 <branch type="IF" condition="${exists}">
 <break>
-<status status="NOT RUN" start="2026-08-12T23:59:30.440190" elapsed="0.000294"/>
+<status status="NOT RUN" start="2026-08-13T00:02:20.973416" elapsed="0.000269"/>
 </break>
-<status status="NOT RUN" start="2026-08-12T23:59:30.439705" elapsed="0.000894"/>
+<status status="NOT RUN" start="2026-08-13T00:02:20.972928" elapsed="0.000838"/>
 </branch>
-<status status="PASS" start="2026-08-12T23:59:30.439642" elapsed="0.001033"/>
+<status status="PASS" start="2026-08-13T00:02:20.972883" elapsed="0.000932"/>
 </if>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-08-12T23:59:31.441724" level="INFO">Slept 1 second.</msg>
+<msg time="2026-08-13T00:02:21.975265" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-08-12T23:59:30.440886" elapsed="1.001152"/>
+<status status="PASS" start="2026-08-13T00:02:20.973956" elapsed="1.001626"/>
 </kw>
 <var name="${i}">0</var>
-<status status="PASS" start="2026-08-12T23:59:30.428487" elapsed="1.013657"/>
+<status status="PASS" start="2026-08-13T00:02:20.959189" elapsed="1.016504"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2026-08-12T23:59:31.443546" level="INFO" html="true">File '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' exists.</msg>
+<msg time="2026-08-13T00:02:21.977136" level="INFO" html="true">File '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' exists.</msg>
 <arg>${file_path}</arg>
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="PASS" start="2026-08-12T23:59:31.443092" elapsed="0.000732"/>
+<status status="PASS" start="2026-08-13T00:02:21.976656" elapsed="0.000714"/>
 </kw>
-<msg time="2026-08-12T23:59:31.443951" level="INFO">${exists} = True</msg>
+<msg time="2026-08-13T00:02:21.977526" level="INFO">${exists} = True</msg>
 <var>${exists}</var>
 <arg>File Should Exist</arg>
 <arg>${file_path}</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-08-12T23:59:31.442620" elapsed="0.001603"/>
+<status status="PASS" start="2026-08-13T00:02:21.976192" elapsed="0.001583"/>
 </kw>
 <if>
 <branch type="IF" condition="${exists}">
 <break>
-<status status="PASS" start="2026-08-12T23:59:31.444640" elapsed="0.000187"/>
+<status status="PASS" start="2026-08-13T00:02:21.978207" elapsed="0.000170"/>
 </break>
-<status status="PASS" start="2026-08-12T23:59:31.444373" elapsed="0.000522"/>
+<status status="PASS" start="2026-08-13T00:02:21.977939" elapsed="0.000505"/>
 </branch>
-<status status="PASS" start="2026-08-12T23:59:31.444352" elapsed="0.000601"/>
+<status status="PASS" start="2026-08-13T00:02:21.977905" elapsed="0.000581"/>
 </if>
 <kw name="Sleep" owner="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-08-12T23:59:31.445072" elapsed="0.000202"/>
+<status status="NOT RUN" start="2026-08-13T00:02:21.978595" elapsed="0.000202"/>
 </kw>
 <var name="${i}">1</var>
-<status status="PASS" start="2026-08-12T23:59:31.442316" elapsed="0.003031"/>
+<status status="PASS" start="2026-08-13T00:02:21.975866" elapsed="0.003010"/>
 </iter>
 <var>${i}</var>
 <value>10</value>
-<status status="PASS" start="2026-08-12T23:59:30.427602" elapsed="1.017817"/>
+<status status="PASS" start="2026-08-13T00:02:20.958377" elapsed="1.020556"/>
 </for>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${exists}</arg>
+<arg>msg=Downloaded file was not found: ${file_path}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-08-13T00:02:21.979084" elapsed="0.000441"/>
+</kw>
 <kw name="Get File Size" owner="OperatingSystem">
-<msg time="2026-08-12T23:59:31.445935" level="INFO" html="true">Size of file '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' is 66 bytes.</msg>
-<msg time="2026-08-12T23:59:31.446231" level="INFO">${fileSize} = 66</msg>
+<msg time="2026-08-13T00:02:21.980055" level="INFO" html="true">Size of file '&lt;a href="file://C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt"&gt;C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads\playwright-hard-test.txt&lt;/a&gt;' is 66 bytes.</msg>
+<msg time="2026-08-13T00:02:21.980440" level="INFO">${fileSize} = 66</msg>
 <var>${fileSize}</var>
 <arg>${file_path}</arg>
 <doc>Returns and logs file size as an integer in bytes.</doc>
-<status status="PASS" start="2026-08-12T23:59:31.445543" elapsed="0.000955"/>
+<status status="PASS" start="2026-08-13T00:02:21.979656" elapsed="0.001038"/>
 </kw>
 <if>
 <branch type="IF" condition="${fileSize} &gt; 0">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-12T23:59:31.448327" level="INFO">
+<msg time="2026-08-13T00:02:21.982736" level="INFO">
 File downloaded successfully: C:\Users\G4M3R\PROJETOS\robotChallenge\data\downloads/playwright-hard-test.txt.</msg>
 <arg>\nFile downloaded successfully: ${file_path}.</arg>
 <arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-12T23:59:31.447505" elapsed="0.001613"/>
+<status status="PASS" start="2026-08-13T00:02:21.982164" elapsed="0.000975"/>
 </kw>
-<status status="PASS" start="2026-08-12T23:59:31.446670" elapsed="0.002639"/>
+<status status="PASS" start="2026-08-13T00:02:21.980923" elapsed="0.002394"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" owner="BuiltIn">
 <arg>File download failed or file is empty or corrupted: ${file_path}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-08-12T23:59:31.449743" elapsed="0.000214"/>
+<status status="NOT RUN" start="2026-08-13T00:02:21.983646" elapsed="0.000192"/>
 </kw>
-<status status="NOT RUN" start="2026-08-12T23:59:31.449377" elapsed="0.000677"/>
+<status status="NOT RUN" start="2026-08-13T00:02:21.983384" elapsed="0.000530"/>
 </branch>
-<status status="PASS" start="2026-08-12T23:59:31.446622" elapsed="0.003489"/>
+<status status="PASS" start="2026-08-13T00:02:21.980884" elapsed="0.003068"/>
 </if>
-<status status="PASS" start="2026-08-12T23:59:30.425493" elapsed="1.024671"/>
+<status status="PASS" start="2026-08-13T00:02:20.956173" elapsed="1.027826"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-08-12T23:59:31.450517" elapsed="4.642140"/>
+<status status="PASS" start="2026-08-13T00:02:21.984416" elapsed="4.649223"/>
 </kw>
 <doc>Automates file download and verifies it locally.</doc>
 <tag>download</tag>
-<status status="PASS" start="2026-08-12T23:59:27.036879" elapsed="9.056089"/>
+<status status="PASS" start="2026-08-13T00:02:17.331737" elapsed="9.302192"/>
 </test>
 <test id="s1-s1-s1-t3" name="Test 3: Validate JSON Comparison" line="21">
 <kw name="Compare JSON Files" owner="keywords">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2026-08-12T23:59:36.108631" level="INFO">${json1} = {'id': 101, 'name': 'QA Challenge', 'active': True, 'skills': ['Robot Framework', 'Selenium', 'Python']}</msg>
+<msg time="2026-08-13T00:02:26.660295" level="INFO">${json1} = {'id': 101, 'name': 'QA Challenge', 'active': True, 'skills': ['Robot Framework', 'Selenium', 'Python']}</msg>
 <var>${json1}</var>
 <arg>${json1_path}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2026-08-12T23:59:36.108013" elapsed="0.000842"/>
+<status status="PASS" start="2026-08-13T00:02:26.659652" elapsed="0.001018"/>
 </kw>
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2026-08-12T23:59:36.109726" level="INFO">${json2} = {'id': 101, 'name': 'QA Challenge', 'active': True, 'skills': ['Robot Framework', 'Selenium', 'Python']}</msg>
+<msg time="2026-08-13T00:02:26.662125" level="INFO">${json2} = {'id': 101, 'name': 'QA Challenge', 'active': True, 'skills': ['Robot Framework', 'Selenium', 'Python']}</msg>
 <var>${json2}</var>
 <arg>${json2_path}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2026-08-12T23:59:36.109031" elapsed="0.001249"/>
+<status status="PASS" start="2026-08-13T00:02:26.661117" elapsed="0.001287"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json1}</arg>
 <arg>${json2}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-08-12T23:59:36.110548" elapsed="0.000597"/>
+<status status="PASS" start="2026-08-13T00:02:26.662591" elapsed="0.000485"/>
 </kw>
 <arg>${DATA_DIR}/json1.json</arg>
 <arg>${DATA_DIR}/json2.json</arg>
-<status status="PASS" start="2026-08-12T23:59:36.107282" elapsed="0.003974"/>
+<status status="PASS" start="2026-08-13T00:02:26.659133" elapsed="0.004056"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-08-12T23:59:36.111569" elapsed="0.000333"/>
+<status status="PASS" start="2026-08-13T00:02:26.663534" elapsed="0.000326"/>
 </kw>
 <doc>Reads and compares two JSON files.</doc>
 <tag>json</tag>
-<status status="PASS" start="2026-08-12T23:59:36.097635" elapsed="0.014412"/>
+<status status="PASS" start="2026-08-13T00:02:26.648714" elapsed="0.015290"/>
 </test>
 <doc>Automated Test Suite for QA Challenge</doc>
-<status status="PASS" start="2026-08-12T23:59:18.807886" elapsed="17.308662"/>
+<status status="PASS" start="2026-08-13T00:02:08.829454" elapsed="17.840243"/>
 </suite>
-<status status="PASS" start="2026-08-12T23:59:18.797739" elapsed="17.322210"/>
+<status status="PASS" start="2026-08-13T00:02:08.820584" elapsed="17.852689"/>
 </suite>
-<status status="PASS" start="2026-08-12T23:59:18.724022" elapsed="17.401587"/>
+<status status="PASS" start="2026-08-13T00:02:08.769502" elapsed="17.909838"/>
 </suite>
 <statistics>
 <total>
